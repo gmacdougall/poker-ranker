@@ -7,6 +7,6 @@ class Game
   end
 
   def winner
-    @hands.select { |hand| hand == @hands.sort.last }
+    @hands.select { |hand| hand == @hands.max }
   end
 end

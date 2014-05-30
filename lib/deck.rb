@@ -10,9 +10,9 @@ class Deck
     @cards.shuffle!
   end
 
-  def deal
-    hand = Hand.new @cards.pop(5)
-    raise "Out of cards" unless hand.valid?
+  def deal(num_cards = 5)
+    hand = Hand.new @cards.pop(num_cards)
+    raise "Out of cards" if @cards.empty?
     hand
   end
 end
